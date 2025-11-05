@@ -1,0 +1,20 @@
+# ~/.config/ghostty/config
+# Ghostty terminal emulator configuration
+
+# Font settings
+font-family = FiraCode Nerd Font Mono
+font-size = 24
+
+# Appearance
+theme = Nvim Dark
+cursor-style = block
+adjust-cell-height = 35%
+
+# Window settings
+window-padding-balance = true
+window-padding-x = 5
+window-padding-y = 0
+window-save-state = always
+
+# macOS-specific
+macos-titlebar-style = transparent

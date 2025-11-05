@@ -1,0 +1,71 @@
+# ~/.config/starship.toml
+
+# Main prompt format
+format = """
+$directory$git_branch$git_status$golang$nodejs$ruby
+$cmd_duration$status$character
+"""
+
+add_newline = true
+
+# 1. Path configuration
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+style = "bold cyan"
+format = "in [$path]($style) "
+
+# --- Git Configuration ---
+[git_branch]
+symbol = ""
+format = "on [$symbol $branch]($style) "
+style = "bold purple"
+
+[git_status]
+format = "([$all_status]($style)) "
+style = "bold red"
+staged = '[+]($style)'
+conflicted = '[=]($style)'
+deleted = '[-]($style)'
+renamed = '[»]($style)'
+modified = '[!]($style)'
+untracked = '[?]($style)'
+ahead = '⇡${count}'
+behind = '⇣${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+
+# --- Language Configurations ---
+[golang]
+format = "via [🐹 $version](bold green) "
+
+[nodejs]
+format = "via [NODE $version](bold green) "
+
+[ruby]
+format = "via [💎 $version](bold red) "
+
+# --- Shell & Status ---
+
+# 6. Success/Failure status
+# FIX: The format string '[$symbol] ' caused a parsing error
+# because the symbols themselves already contain brackets [].
+# The correct format string just '$symbol '
+[status]
+symbol = "[✘](bold red)"
+success_symbol = "[✔](bold green)"
+format = "$symbol "  # <-- This is the fix
+disabled = false
+
+# 8. Time to run every command
+[cmd_duration]
+min_time = 500
+format = "took [$duration]($style) "
+style = "bold yellow"
+
+# Prompt character
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vimcmd_symbol = "[V](bold blue)"
+
+

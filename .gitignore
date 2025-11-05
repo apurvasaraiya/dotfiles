@@ -1,0 +1,35 @@
+# Cursor IDE
+.cursor/
+
+# ZSH History Files
+config/zsh/history
+config/zsh/.zsh_history
+.zsh_history
+
+# Backup Files
+*.backup
+*.backup.*
+*~
+
+# Log Files
+*.log
+
+# OS-specific Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary Files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# Environment-specific
+.env
+.env.local
